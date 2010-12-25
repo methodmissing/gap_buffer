@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = 'gab_buffer'
+  s.name = 'gap_buffer'
   s.version = '0.1'
   s.date = '2010-10-25'
   s.authors = ['Lourens Naudé', 'Hsin Tsao']
