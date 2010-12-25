@@ -1,0 +1,38 @@
+Implementation of a Gap Buffer for Ruby MRI.
+  (c) 2010 Lourens Naudé (methodmissing), based off work from Hsin Tsao <stsao@lazyhacker.com>
+
+  http://github.com/methodmissing/gap_buffer
+
+How Gap Buffers work :
+
+http://en.wikipedia.org/wiki/Gap_buffer
+http://www.lazyhacker.com/gapbuffer/gapbuffer.htm
+
+This library works with Ruby 1.8 and 1.9 and exposes the following API :
+
+  gb = GapBuffer.new
+  gb.size #=> 20
+  gb.offset #=> 9
+  gb << "test"
+  gb.print #=> test_______________
+  gb.insert('b')
+  gb.offset #=> 5
+  gb.print #=> testb______________
+  gb.insert_at(6, 'u')
+  gb.print #=> testbu_____________
+  gb.previous #=> b
+  gb.next #=> u
+  gb.offset = 7
+  gb.put('f')
+  gb.print #=> testbuf____________
+
+To run the test suite:
+
+  rake
+
+Todo:
+
+  Better 1.9 compat
+  Look into moving off the C++ implementation
+
+Work in progress, thanks for watching!
